@@ -15,7 +15,7 @@ This repo contains initials steps for the safeguard system implmented within Opt
 First of all, you should be able to implement the setup from this repo https://github.com/lantacisaza/joy2crsf_ros2.
 It will give you manual remote control of the drone through the joystick. Once you have that working setup, you can continue.
 
-Software:
+### Software:
 - Ubuntu (any vesion or any OS that supports ROS2 Humble)
 - Betaflight software (for debugging)
 - ROS 2 Humble (or newer)
@@ -28,7 +28,7 @@ Software:
   - `scipy`
   - `cvxpy`
   - `numpy`
-Hardware:
+### Hardware:
   - Drone (TinyWhoop Modula6 was used)
   - ELRS TX module 
   - Power supply (in case TX module consumes more than 5V)
@@ -68,7 +68,7 @@ ros2 launch vrpn_mocap client.launch.yaml server:=192.168.1.202 port:=3883
 cd ros2_ws/
 ros2 topic list
 ```
-You should see something like:
+You should see all rigid bodies that are streaming 
 ### 5. In same terminal, subscribe to the needed rigid body, for example:
 ```bash
 ros2 topic echo /vrpn_mocap/AzamatDrone/pose
@@ -77,9 +77,9 @@ You should see continous data stream of pose and orientation
 ---
 ## Usage
 You will need 5 terminals opened at the same time. 
-### 1. 2 terminals for the joystick connection, see this repo https://github.com/lantacisaza/joy2crsf_ros2 
-### 2. 2 terminals for the mocap system, from above
-### 3. 1 terminal to run the main script
+### 1. Two terminals for the joystick connection, see this repo https://github.com/lantacisaza/joy2crsf_ros2 
+### 2. Two terminals for the mocap system, from above
+### 3. One terminal to run the main script
 ```bash
 cd ros2_ws
 colcon build
