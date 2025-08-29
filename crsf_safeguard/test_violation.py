@@ -190,10 +190,6 @@ class PID:
 
 class PID_control(Node):
    def __init__(self):
-       self.traj_file = "/home/lantacis/ros2_ws/src/crsf_joystick/crsf_joystick/trajectory_log.csv"
-       with open(self.traj_file, mode='w', newline='') as f:
-           writer = csv.writer(f)
-           writer.writerow(['x', 'y', 'z',"roll", "pitch","throttle", "yaw"])
        super().__init__('joy_to_crsf')
        qos = QoSProfile(depth=10)
        qos.reliability = ReliabilityPolicy.BEST_EFFORT
